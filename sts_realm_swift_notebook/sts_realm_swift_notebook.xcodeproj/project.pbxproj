@@ -15,6 +15,7 @@
 		0446749D209A9F50003FD00B /* sts_realm_swift_notebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446749C209A9F50003FD00B /* sts_realm_swift_notebookTests.swift */; };
 		044674A8209A9F50003FD00B /* sts_realm_swift_notebookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044674A7209A9F50003FD00B /* sts_realm_swift_notebookUITests.swift */; };
 		044674B6209AB14A003FD00B /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044674B5209AB14A003FD00B /* NoteRow.swift */; };
+		044674B8209AB7A0003FD00B /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044674B7209AB7A0003FD00B /* AlertService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		044674A7209A9F50003FD00B /* sts_realm_swift_notebookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sts_realm_swift_notebookUITests.swift; sourceTree = "<group>"; };
 		044674A9209A9F50003FD00B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		044674B5209AB14A003FD00B /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
+		044674B7209AB7A0003FD00B /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				04467490209A9F4F003FD00B /* LaunchScreen.storyboard */,
 				04467493209A9F4F003FD00B /* Info.plist */,
 				044674B5209AB14A003FD00B /* NoteRow.swift */,
+				044674B7209AB7A0003FD00B /* AlertService.swift */,
 			);
 			path = sts_realm_swift_notebook;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				044674B6209AB14A003FD00B /* NoteRow.swift in Sources */,
 				0446748A209A9F4F003FD00B /* ViewController.swift in Sources */,
+				044674B8209AB7A0003FD00B /* AlertService.swift in Sources */,
 				04467488209A9F4F003FD00B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

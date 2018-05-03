@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
     
     private let rowId = "NoteRowId"
+    var notes : Results<Note>!
+    var notificationToken : NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +23,26 @@ class ViewController: UIViewController {
         table.register(NoteRow.self, forCellReuseIdentifier: rowId)
         table.delegate = self
         table.dataSource = self
-      
+        
+        headerButton.addTarget(self, action: #selector(onAddTapped), for: .touchUpInside)
+        
+        let realm = RealmService.shared.realm
+        notes = realm.objects(Note.self)
+        
+        notificationToken =  realm.observe{ (notification, realm) in
+            self.table.reloadData()
+        }
+        
+        print(realm.configuration.fileURL)
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        notificationToken?.invalidate()
+    
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -64,7 +84,7 @@ class ViewController: UIViewController {
         
         return table
     }()
-
+    
     func setupViews()  {
         view.addSubview(headerView)
         headerView.addSubview(headerTitle)
@@ -85,18 +105,31 @@ class ViewController: UIViewController {
         headerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-5-[v3]", options: [], metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v4]|", options: [], metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v1(80)][v4]|", options: [], metrics: nil, views: views))
-       
+        
     }
-
+    
+    @objc func onAddTapped(){
+        AlertService.addAlert(in: self, completion: {(line, score, email) in
+            let newNote = Note(line: line, score: score, email: email)
+            RealmService.shared.create(newNote)
+            
+        })
+    }
+    
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: rowId, for: indexPath)
+        guard  let cell = tableView.dequeueReusableCell(withIdentifier: rowId, for: indexPath) as? NoteRow else {
+            return UITableViewCell()
+        }
+        
+        let note = notes[indexPath.row]
+        cell.configure(with: note)
         return cell
     }
     
@@ -104,6 +137,21 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       let note = notes[indexPath.row]
+        AlertService.updateAlert(in: self, note: note, completion: {(line, score, email) in
+            let dict : [String :Any?] = ["line": line,
+                                         "score" : score,
+                                         "email": email]
+            RealmService.shared.update(note, with: dict)
+        })
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else {return}
+        let note = notes[indexPath.row]
+        RealmService.shared.delete(note)
+    }
     
 }
 

@@ -49,7 +49,7 @@ class NoteRow: UITableViewCell {
         addSubview(mail)
         addSubview(number)
         
-        let views = ["v1" : title,"v2" : mail, "v3" : number]
+        let views = ["v1" : title,"v3" : mail, "v2" : number]
         
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-5-[v1]", options: [], metrics: nil, views: views))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:[v3]-5-|", options: [], metrics: nil, views: views))
@@ -57,5 +57,11 @@ class NoteRow: UITableViewCell {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v3]", options: [], metrics: nil, views: views))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-5-[v2]|", options: [], metrics: nil, views: views))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v2]|", options: [], metrics: nil, views: views))
+    }
+    
+    func configure(with note : Note) {
+        title.text = note.line
+        mail.text = note.scoreString()
+        number.text = note.email
     }
 }

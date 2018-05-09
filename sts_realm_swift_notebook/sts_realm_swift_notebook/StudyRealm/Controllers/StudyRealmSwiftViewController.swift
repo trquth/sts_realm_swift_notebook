@@ -28,14 +28,17 @@ class StudyRealmSwiftViewController: UIViewController {
     func seed() {
         
         let realm = try! Realm()
-        
+    
         try! realm.write {
-            realm.create(User.self, value: ["Thien", 25] )
+            let id = PrimaryKeyUtility.shareInstance.incrementID(User.self)
+            realm.create(User.self, value: [id,"Thien", 25])
         }
         
         try! realm.write{
+            
             let user = realm.objects(User.self).first
-            realm.create(Todo.self, value: ["Seed 1","Note 1",Priority.High.rawValue,user])
+            let id = PrimaryKeyUtility.shareInstance.incrementID(Todo.self)
+            realm.create(Todo.self, value: [id,"Seed 1","Note 1",Priority.High.rawValue,user])
         }
     }
     

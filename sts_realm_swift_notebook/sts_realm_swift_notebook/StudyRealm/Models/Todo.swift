@@ -17,7 +17,7 @@ enum Priority : Int {
 
 class Todo: Object {
     
-    @objc dynamic var id : String = NSUUID().uuidString
+    @objc dynamic var id : Int = 0
     @objc dynamic var title : String = ""
     @objc dynamic var note: String? = nil
     let priority = RealmOptional<Int>()

@@ -22,6 +22,7 @@
 		32185FB31993E0159891D197 /* Pods_sts_realm_swift_notebook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA79F18243580244919490B /* Pods_sts_realm_swift_notebook.framework */; };
 		6E1C90C7209B5784009907F4 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C90C6209B5784009907F4 /* Note.swift */; };
 		6E1C90C9209B5C3E009907F4 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C90C8209B5C3E009907F4 /* RealmService.swift */; };
+		6E7C549B20AC6DF400BDC96D /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C549A20AC6DF400BDC96D /* GCDViewController.swift */; };
 		6EF382D220A333C1007CE652 /* PrimaryKeyUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF382D120A333C1007CE652 /* PrimaryKeyUtility.swift */; };
 		6EF382D420A34DF7007CE652 /* StudyRealmUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF382D320A34DF7007CE652 /* StudyRealmUtility.swift */; };
 		926B06EDBE5902AA0A15EE57 /* Pods_sts_realm_swift_notebookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E8751CCFCB538E1E745128 /* Pods_sts_realm_swift_notebookUITests.framework */; };
@@ -73,6 +74,7 @@
 		555782AD078DB665C7ED9CA6 /* Pods-sts_realm_swift_notebookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sts_realm_swift_notebookUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sts_realm_swift_notebookUITests/Pods-sts_realm_swift_notebookUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E1C90C6209B5784009907F4 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		6E1C90C8209B5C3E009907F4 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		6E7C549A20AC6DF400BDC96D /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
 		6EF382D120A333C1007CE652 /* PrimaryKeyUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryKeyUtility.swift; sourceTree = "<group>"; };
 		6EF382D320A34DF7007CE652 /* StudyRealmUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRealmUtility.swift; sourceTree = "<group>"; };
 		C9E8751CCFCB538E1E745128 /* Pods_sts_realm_swift_notebookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sts_realm_swift_notebookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 		04467486209A9F4F003FD00B /* sts_realm_swift_notebook */ = {
 			isa = PBXGroup;
 			children = (
+				6E7C549920AC6D9E00BDC96D /* GCD */,
 				049E18BE20A2A56A00C6968A /* StudyRealm */,
 				6E1C90C6209B5784009907F4 /* Note.swift */,
 				04467487209A9F4F003FD00B /* AppDelegate.swift */,
@@ -190,6 +193,14 @@
 				049E18C320A2A66400C6968A /* StudyRealmSwiftViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6E7C549920AC6D9E00BDC96D /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				6E7C549A20AC6DF400BDC96D /* GCDViewController.swift */,
+			);
+			path = GCD;
 			sourceTree = "<group>";
 		};
 		6EF382D020A33327007CE652 /* Utilities */ = {
@@ -530,6 +541,7 @@
 				6EF382D420A34DF7007CE652 /* StudyRealmUtility.swift in Sources */,
 				044674B8209AB7A0003FD00B /* AlertService.swift in Sources */,
 				04467488209A9F4F003FD00B /* AppDelegate.swift in Sources */,
+				6E7C549B20AC6DF400BDC96D /* GCDViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

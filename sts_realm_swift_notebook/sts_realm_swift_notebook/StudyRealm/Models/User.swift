@@ -14,6 +14,7 @@ class User : Object{
     @objc dynamic var id : Int = 0
     @objc dynamic var userName : String = ""
     let age = RealmOptional<Int>()
+    let roles = List<Authority>()
     
     override static func primaryKey() -> String? {
         return "id"

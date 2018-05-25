@@ -19,6 +19,8 @@
 		049E18C120A2A5AB00C6968A /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E18C020A2A5AB00C6968A /* Todo.swift */; };
 		049E18C420A2A66400C6968A /* StudyRealmSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E18C320A2A66400C6968A /* StudyRealmSwiftViewController.swift */; };
 		049E18C820A2E45300C6968A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E18C720A2E45200C6968A /* User.swift */; };
+		04C4645C20B7BD58003B5602 /* OnlineImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4645B20B7BD58003B5602 /* OnlineImageViewController.swift */; };
+		04C4645E20B7CE93003B5602 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4645D20B7CE93003B5602 /* UIImageExtension.swift */; };
 		04C4828E20A3F34D00E94D9A /* Authority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4828D20A3F34D00E94D9A /* Authority.swift */; };
 		32185FB31993E0159891D197 /* Pods_sts_realm_swift_notebook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA79F18243580244919490B /* Pods_sts_realm_swift_notebook.framework */; };
 		6E1C90C7209B5784009907F4 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C90C6209B5784009907F4 /* Note.swift */; };
@@ -65,6 +67,8 @@
 		049E18C020A2A5AB00C6968A /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		049E18C320A2A66400C6968A /* StudyRealmSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRealmSwiftViewController.swift; sourceTree = "<group>"; };
 		049E18C720A2E45200C6968A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		04C4645B20B7BD58003B5602 /* OnlineImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineImageViewController.swift; sourceTree = "<group>"; };
+		04C4645D20B7CE93003B5602 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		04C4828D20A3F34D00E94D9A /* Authority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authority.swift; sourceTree = "<group>"; };
 		0DD3FB066116D9C64B67DE22 /* Pods-sts_realm_swift_notebookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sts_realm_swift_notebookTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sts_realm_swift_notebookTests/Pods-sts_realm_swift_notebookTests.release.xcconfig"; sourceTree = "<group>"; };
 		153A9AF3CDC376F8C4918D5A /* Pods-sts_realm_swift_notebookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sts_realm_swift_notebookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sts_realm_swift_notebookTests/Pods-sts_realm_swift_notebookTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 		04467486209A9F4F003FD00B /* sts_realm_swift_notebook */ = {
 			isa = PBXGroup;
 			children = (
+				04C4645A20B7BD3A003B5602 /* OnlineImage */,
+				04C4645920B7BB76003B5602 /* LocalNotification */,
 				049E18BE20A2A56A00C6968A /* StudyRealm */,
 				6E1C90C6209B5784009907F4 /* Note.swift */,
 				04467487209A9F4F003FD00B /* AppDelegate.swift */,
@@ -193,6 +199,22 @@
 				049E18C320A2A66400C6968A /* StudyRealmSwiftViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04C4645920B7BB76003B5602 /* LocalNotification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalNotification;
+			sourceTree = "<group>";
+		};
+		04C4645A20B7BD3A003B5602 /* OnlineImage */ = {
+			isa = PBXGroup;
+			children = (
+				04C4645B20B7BD58003B5602 /* OnlineImageViewController.swift */,
+				04C4645D20B7CE93003B5602 /* UIImageExtension.swift */,
+			);
+			path = OnlineImage;
 			sourceTree = "<group>";
 		};
 		6EF382D020A33327007CE652 /* Utilities */ = {
@@ -445,11 +467,13 @@
 				6E1C90C7209B5784009907F4 /* Note.swift in Sources */,
 				049E18C120A2A5AB00C6968A /* Todo.swift in Sources */,
 				6E1C90C9209B5C3E009907F4 /* RealmService.swift in Sources */,
+				04C4645C20B7BD58003B5602 /* OnlineImageViewController.swift in Sources */,
 				044674B6209AB14A003FD00B /* NoteRow.swift in Sources */,
 				049E18C420A2A66400C6968A /* StudyRealmSwiftViewController.swift in Sources */,
 				6EF382D220A333C1007CE652 /* PrimaryKeyUtility.swift in Sources */,
 				049E18C820A2E45300C6968A /* User.swift in Sources */,
 				0446748A209A9F4F003FD00B /* ViewController.swift in Sources */,
+				04C4645E20B7CE93003B5602 /* UIImageExtension.swift in Sources */,
 				6EF382D420A34DF7007CE652 /* StudyRealmUtility.swift in Sources */,
 				044674B8209AB7A0003FD00B /* AlertService.swift in Sources */,
 				04467488209A9F4F003FD00B /* AppDelegate.swift in Sources */,
